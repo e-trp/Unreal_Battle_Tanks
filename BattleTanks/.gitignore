@@ -44,6 +44,10 @@
 *.VC.db
 *.VC.opendb
 
+
+#Starter content
+Content/StarterContent/*
+
 # Precompiled Assets
 SourceArt/**/*.png
 SourceArt/**/*.tga
