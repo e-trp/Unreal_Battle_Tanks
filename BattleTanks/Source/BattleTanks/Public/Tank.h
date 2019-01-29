@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include"TankBarrel.h"
 #include "TankAimingComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
@@ -19,13 +20,16 @@ public:
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-	void SetBarrelReferences(UStaticMeshComponent *BarrelToSet);
+	void SetBarrelReferences(UTankBarrel *BarrelToSet);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	UTankAimingComponent * TankAimingComponent = nullptr;
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 10000;
 
 public:	
 	// Called every frame
